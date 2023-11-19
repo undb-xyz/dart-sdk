@@ -7,8 +7,8 @@ import 'package:dart_sdk/src/api/table.dart';
 class Undb {
   late final HttpClient httpClient;
 
-  Undb() {
-    httpClient = HttpClient();
+  Undb(String apiKey) {
+    httpClient = HttpClient(apiKey);
   }
 
   TableApi table(String tableId) {

@@ -7,6 +7,6 @@ class RecordApi {
   RecordApi(this.tableId, this.httpClient);
 
   Future<dynamic> getMany() {
-    return httpClient.request('api/v1/openapi/tables/$tableId/records', 'GET');
+    return httpClient.request('/api/v1/openapi/tables/$tableId/records', 'GET');
   }
 }
