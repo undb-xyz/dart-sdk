@@ -1,3 +1,4 @@
+import "package:dart_sdk/src/api/types.dart";
 import "package:dio/dio.dart";
 
 class HttpClient {
@@ -16,12 +17,13 @@ class HttpClient {
   }
 
   Future<dynamic> request(String endpoint, String method,
-      {Map<String, dynamic> body = const {}}) {
+      {Map<String, dynamic>? body}) {
     dynamic data;
 
     final response = dio.request(
       endpoint,
       options: Options(method: method),
+      data: body,
     );
 
     data = response;
