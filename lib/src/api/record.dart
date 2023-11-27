@@ -9,4 +9,14 @@ class RecordApi {
   Future<dynamic> getMany() {
     return httpClient.request('/api/v1/openapi/tables/$tableId/records', 'GET');
   }
+
+  Future<dynamic> getOne(String recordId) {
+    return httpClient.request(
+        '/api/v1/openapi/tables/$tableId/records/$recordId', 'GET');
+  }
+
+  Future<void> deleteOne(String recordId) {
+    return httpClient.request(
+        '/api/v1/openapi/tables/$tableId/records/$recordId', 'DELETE');
+  }
 }

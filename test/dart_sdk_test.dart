@@ -18,9 +18,19 @@ void main() {
       // Additional setup goes here.
     });
 
-    test('First Test', () async {
+    test('get many records', () async {
       var records = await undb.table("tblk4h9pgm7").record.getMany();
       print(records);
+    });
+
+    test('get one record', () async {
+      var records =
+          await undb.table("tblk4h9pgm7").record.getOne('rec3k4cw1m8');
+      print(records);
+    });
+
+    test('delete one record', () async {
+      await undb.table("tblk4h9pgm7").record.deleteOne('rec3k4cw1m8');
     });
   });
 }
