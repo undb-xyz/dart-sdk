@@ -6,3 +6,10 @@ class CreateRecordDTO {
 
   CreateRecordDTO(this.values, {this.id});
 }
+
+class UpdateRecordDTO {
+  String id;
+  RecordValues values;
+
+  UpdateRecordDTO(this.id, this.values);
+}

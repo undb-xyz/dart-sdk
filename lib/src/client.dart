@@ -1,7 +1,6 @@
-// TODO: Put public facing types in this file.
-
 import 'package:dart_sdk/src/api/http_client.dart';
 import 'package:dart_sdk/src/api/table.dart';
+export 'package:dart_sdk/src/api/types.dart';
 
 /// Checks if you are awesome. Spoiler: you are.
 class Undb {

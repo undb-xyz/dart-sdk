@@ -1,5 +1,4 @@
 import 'package:dart_sdk/dart_sdk.dart';
-import 'package:dart_sdk/src/api/types.dart';
 import 'package:test/test.dart';
 import 'package:dotenv/dotenv.dart';
 
@@ -31,11 +30,15 @@ void main() {
     });
 
     test('create one record', () async {
-      var results = await undb
+      await undb
           .table("tblk4h9pgm7")
           .record
           .createOne(CreateRecordDTO({"Item": "hello world from dart"}));
-      print(results);
+    });
+
+    test('update one record', () async {
+      await undb.table("tblk4h9pgm7").record.updateOne(
+          UpdateRecordDTO("recy0gptap1", {"Item": "update from dart"}));
     });
 
     test('delete one record', () async {

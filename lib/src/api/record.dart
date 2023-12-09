@@ -16,11 +16,19 @@ class RecordApi {
         '/api/v1/openapi/tables/$tableId/records/$recordId', 'GET');
   }
 
-  Future<dynamic> createOne(CreateRecordDTO dto) {
+  Future<void> createOne(CreateRecordDTO dto) {
     return httpClient.request(
       '/api/v1/openapi/tables/$tableId/records',
       'POST',
       body: {"id": dto.id, "values": dto.values},
+    );
+  }
+
+  Future<void> updateOne(UpdateRecordDTO dto) {
+    return httpClient.request(
+      '/api/v1/openapi/tables/$tableId/records/${dto.id}',
+      'PATCH',
+      body: {"values": dto.values},
     );
   }
 
